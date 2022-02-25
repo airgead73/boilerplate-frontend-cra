@@ -4,7 +4,7 @@ import { useAuth0 } from '@auth0/auth0-react';
 
 import { NavBar, Footer, Loading } from "./components";
 import { Home, Profile, ExternalApi } from "./views";
-import ProtectedRoute from './auth/protected-route';
+import ProtectedRoutes from './auth/protected-route';
 
 import "./app.css";
 
@@ -20,8 +20,10 @@ const App = () => {
       <div className="container flex-grow-1">
         <Routes>
           <Route path="/" element={<Home/>} />
-          <ProtectedRoute path="/profile" element={<Profile/>} />
-          <ProtectedRoute path="/external-api" element={<ExternalApi/>} />
+          <Route element={<ProtectedRoutes/>}>
+            <Route path="/profile" element={<Profile/>} />
+            <Route path="/external-api" element={<ExternalApi/>} />
+          </Route>
         </Routes>
       </div>
       <Footer />
