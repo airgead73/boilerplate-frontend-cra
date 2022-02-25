@@ -1,5 +1,5 @@
 import React from "react";
-import { Route, Switch } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import { useAuth0 } from '@auth0/auth0-react';
 
 import { NavBar, Footer, Loading } from "./components";
@@ -18,11 +18,11 @@ const App = () => {
     <div id="app" className="d-flex flex-column h-100">
       <NavBar />
       <div className="container flex-grow-1">
-        <Switch>
-          <Route path="/" exact component={Home} />
-          <ProtectedRoute path="/profile" component={Profile} />
-          <ProtectedRoute path="/external-api" component={ExternalApi} />
-        </Switch>
+        <Routes>
+          <Route path="/" element={<Home/>} />
+          <ProtectedRoute path="/profile" element={<Profile/>} />
+          <ProtectedRoute path="/external-api" element={<ExternalApi/>} />
+        </Routes>
       </div>
       <Footer />
     </div>
