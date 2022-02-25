@@ -14,7 +14,7 @@ const Hero = () => (
         rel="noopener noreferrer"
         href="https://auth0.com/docs/quickstart/spa/react"
       >
-        React
+        React [[cra]]
       </a>
     </p>
   </div>
